@@ -1,18 +1,14 @@
 --[[
     Aimbot v8, johnny#1111
-
-    I decided to make it open source for all the new scripters out there (including me), don't ripoff or claim this as your own.
-    When I get time I will comment a lot of the stuff here.
-
 ]]
 
 
 
--- Extremly bad code starts below here
+-- 
 
-local DEBUG_MODE = false -- warnings, prints and profiles dont change idiot thanks
+local DEBUG_MODE = false -- warnings, prints and profiles dont change retard thanks
 
--- Ok I declare some variables here for micro optimization. I might declare again in the blocks because I am lazy to check here
+-- 
 local game, workspace = game, workspace
 
 local cf, v3, v2, udim2 = CFrame, Vector3, Vector2, UDim2
@@ -74,7 +70,7 @@ servs = setmetatable(
 })
 
 local connections = {}
-local function bindEvent(event, callback) -- Let me disconnect in peace
+local function bindEvent(event, callback)
     local con = event:Connect(callback)
     table.insert(connections, con)
     return con
@@ -109,7 +105,7 @@ end
 local locpl = players.LocalPlayer
 local mouse = locpl:GetMouse()
 local camera = workspace.CurrentCamera
-workspace:GetPropertyChangedSignal("CurrentCamera"):Connect(function() -- if a script changes currentcamera
+workspace:GetPropertyChangedSignal("CurrentCamera"):Connect(function()
     camera = workspace.CurrentCamera
 end)
 
@@ -147,7 +143,7 @@ local run = {}
 local ah8 = {enabled = true;}
 
 
-local visiblekids = {} -- no need to check twice each frame yes? todo :(
+local visiblekids = {} 
 -- Some libraries
 
 do
@@ -233,7 +229,7 @@ do
     end
 
     local charshit = {}
-    function utility.getcharacter(player) -- Change this or something if you want to add support for other games.
+    function utility.getcharacter(player) 
         if (player == nil) then return end
         if (charshit[player]) then return charshit[player] end
 
@@ -262,7 +258,7 @@ do
 
         if (char ~= nil) then
             local root = (findFirstChild(char, "HumanoidRootPart") or char.PrimaryPart)
-            if (root ~= nil) then -- idk
+            if (root ~= nil) then 
                 --bindEvent(root.AncestryChanged, function(_, parent)
                 --    if (parent == nil) then
                 --        roostshit[player] = nil
@@ -278,7 +274,7 @@ do
     end
 
     spawn(function()
-        while ah8 and ah8.enabled do -- Some games are gay
+        while ah8 and ah8.enabled do 
             utility.mychar = utility.getcharacter(locpl)
             if (utility.mychar ~= nil) then
                 utility.myroot = utility.getroot(locpl)
